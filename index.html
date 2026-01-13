@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esma Tokcan Tekin - Öğretmen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .profile-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            font-size: 0.95em;
+        }
+
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 15px;
+            gap: 10px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 25px;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .item {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 3px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+
+        .item:hover {
+            border-left-color: #667eea;
+            transform: translateX(5px);
+        }
+
+        .item-title {
+            font-size: 1.1em;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .item-subtitle {
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .item-date {
+            color: #999;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .pub-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pub-list li {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s;
+        }
+
+        .pub-list li:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .award-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .award-type {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .award-date {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            section {
+                padding: 25px;
+            }
+
+            nav ul {
+                padding: 10px;
+            }
+
+            nav a {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="profile-section">
+            <h1>Esma TOKCAN TEKİN</h1>
+            <p class="subtitle">Türk Dili ve Edebiyatı Öğretmeni</p>
+            <div class="contact-info">
+                <span class="contact-item">📧 esma.tokcantekin@meb.gov.tr</span>
+                <span class="contact-item">📍 Ankara</span>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#hakkimda">Hakkımda</a></li>
+            <li><a href="#egitim">Eğitim</a></li>
+            <li><a href="#deneyim">Deneyim</a></li>
+            <li><a href="#yayinlar">Yayınlar</a></li>
+            <li><a href="#hizmetici">Hizmetiçi Eğitimler</a></li>
+            <li><a href="#oduller">Ödüller</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="hakkimda">
+            <h2>Hakkımda</h2>
+            <p>Yükseköğretim ve Yurt Dışı Eğitim Genel Müdürlüğü'nde görevli Türk Dili ve Edebiyatı Öğretmeniyim. 2007 yılından bu yana eğitim alanında aktif olarak çalışmaktayım. Dokuz Eylül Üniversitesi'nde lisans ve yüksek lisans eğitimimi tamamladım. Eğitim ve öğretim sürecinde öğrencilerimize kaliteli ve çağdaş bir eğitim sunmak için sürekli kendimi geliştirmeye özen gösteriyorum.</p>
+        </section>
+
+        <section id="egitim">
+            <h2>Eğitim Bilgileri</h2>
+            <div class="item">
+                <div class="item-title">Yüksek Lisans (Tezsiz)</div>
+                <div class="item-subtitle">Dokuz Eylül Üniversitesi - Ortaöğretim Sosyal Alanlar Eğitimi</div>
+                <div class="item-date">Mezuniyet: 2007</div>
+            </div>
+            <div class="item">
+                <div class="item-title">Lisans</div>
+                <div class="item-subtitle">Dokuz Eylül Üniversitesi - Türk Dili ve Edebiyatı Eğitimi/Öğretmenliği</div>
+                <div class="item-date">Mezuniyet: 2006</div>
+            </div>
+        </section>
+
+        <section id="deneyim">
+            <h2>İş Deneyimi</h2>
+            <div class="item">
+                <div class="item-title">Öğretmen (Görevlendirme)</div>
+                <div class="item-subtitle">Yükseköğretim ve Yurt Dışı Eğitim Genel Müdürlüğü</div>
+                <div class="item-date">Şubat 2025 - Devam Ediyor</div>
+            </div>
+            <div class="item">
+                <div class="item-title">Öğretmen (Görevlendirme)</div>
+                <div class="item-subtitle">Temel Eğitim Genel Müdürlüğü</div>
+                <div class="item-date">Nisan 2024 - Ocak 2025</div>
+            </div>
+            <div class="item">
+                <div class="item-title">Öğretmen</div>
+                <div class="item-subtitle">Yenikent Şehit Yasin Bahadır Yüce Anadolu İmam Hatip Lisesi - Ankara</div>
+                <div class="item-date">Şubat 2019 - Devam Ediyor (6 yıl 11 ay)</div>
+            </div>
+            <div class="item">
+                <div class="item-title">Öğretmen</div>
+                <div class="item-subtitle">Metin Çiviler Anadolu Lisesi - Antalya/Kepez</div>
+                <div class="item-date">Ocak 2016 - Kasım 2018 (2 yıl 4 ay)</div>
+            </div>
+            <div class="item">
+                <div class="item-title">Çeşitli Eğitim Kurumlarında Öğretmenlik</div>
+                <div class="item-subtitle">Antalya, Bursa ve Burdur</div>
+                <div class="item-date">2007 - 2016</div>
+            </div>
+        </section>
+
+        <section id="yayinlar">
+            <h2>Yayınlar</h2>
+            <ul class="pub-list">
+                <li><strong>Yazar & Editör:</strong> Türkçe ve Türk Kültürü Kitapları 5-6-7-8. Seviye</li>
+                <li><strong>Dil Uzmanı:</strong> Temel Eğitim Genel Müdürlüğü Erken Çocukluk Daire Başkanlığı - Okul Öncesi Çocuk Şarkıları 1</li>
+                <li><strong>Dil Uzmanı:</strong> Temel Eğitim Genel Müdürlüğü Erken Çocukluk Daire Başkanlığı - Okul Öncesi Çocuk Şarkıları 2</li>
+                <li><strong>Dil Uzmanı:</strong> Temel Eğitim Genel Müdürlüğü Erken Çocukluk Daire Başkanlığı - Okul Öncesi Çocuklar İçin Tekerlemeler</li>
+            </ul>
+        </section>
+
+        <section id="hizmetici">
+            <h2>Hizmetiçi Eğitim Faaliyetleri</h2>
+            <div class="item">
+                <div class="item-subtitle">Uzman Öğretmenlik Eğitim Programı Semineri</div>
+                <div class="item-date">Temmuz - Eylül 2022</div>
+            </div>
+            <div class="item">
+                <div class="item-subtitle">Müze Eğitimi Kursu</div>
+                <div class="item-date">Ağustos 2020</div>
+            </div>
+            <div class="item">
+                <div class="item-subtitle">Dijital Girişimciliğin Temelleri Kursu</div>
+                <div class="item-date">Temmuz 2020</div>
+            </div>
+            <div class="item">
+                <div class="item-subtitle">FATİH Projesi - Eğitimde Teknoloji Kullanım Kursu</div>
+                <div class="item-date">Ekim 2012</div>
+            </div>
+            <div class="item">
+                <div class="item-subtitle">İş Sağlığı ve Güvenliği Eğitimleri</div>
+                <div class="item-date">2019, 2022, 2025</div>
+            </div>
+            <p style="margin-top: 15px; color: #666; font-size: 0.95em;">Ve daha birçok seminer ve kurs programına katılım...</p>
+        </section>
+
+        <section id="oduller">
+            <h2>Aldığı Ödüller</h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-type">Üstün Başarı Belgesi</div>
+                    <div class="award-date">10 Şubat 2025</div>
+                </div>
+                <div class="award-card">
+                    <div class="award-type">Başarı Belgesi</div>
+                    <div class="award-date">26 Eylül 2024</div>
+                </div>
+                <div class="award-card">
+                    <div class="award-type">Başarı Belgesi</div>
+                    <div class="award-date">1 Haziran 2022</div>
+                </div>
+                <div class="award-card">
+                    <div class="award-type">Başarı Belgesi</div>
+                    <div class="award-date">17 Ocak 2022</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Esma Tokcan Tekin. Tüm hakları saklıdır.</p>
+    </footer>
+</body>
+</html>
