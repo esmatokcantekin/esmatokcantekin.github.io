@@ -7,6 +7,8 @@
     <link rel="icon" href="https://ulkemyanimda.github.io/icons/factory.ico" type="image/x-icon">
     <title>Materyal Fabrikası - Türkçe ve Türk Kültürü</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
         * {
             margin: 0;
             padding: 0;
@@ -14,29 +16,32 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
             min-height: 100vh;
+            color: #1e293b;
         }
 
         .header {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem 0;
+            background: #1e293b;
+            padding: 3rem 0;
             text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid #334155;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         .header h1 {
-            color: white;
-            font-size: 3rem;
+            color: #f8fafc;
+            font-size: 3.2rem;
+            font-weight: 800;
             margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: -1px;
         }
 
         .header p {
-            color: rgba(255, 255, 255, 0.9);
+            color: #94a3b8;
             font-size: 1.2rem;
+            font-weight: 500;
         }
 
         .container {
@@ -46,12 +51,12 @@
         }
 
         .search-section {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            background: #ffffff;
             padding: 2rem;
             margin: 2rem 0;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
         }
 
         .search-box {
@@ -63,20 +68,33 @@
 
         .search-input {
             flex: 1;
-            padding: 1rem;
-            border: none;
-            border-radius: 10px;
+            padding: 1.2rem 1.5rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
             font-size: 1.1rem;
             min-width: 250px;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background: #f8fafc;
+            color: #1e293b;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .search-input::placeholder {
+            color: #94a3b8;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
         }
 
         .filter-section {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
-            align-items: center;
+            align-items: flex-end;
         }
 
         .filter-group {
@@ -86,89 +104,112 @@
         }
 
         .filter-group label {
-            color: white;
+            color: #475569;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .filter-select {
-            padding: 0.8rem;
-            border: none;
-            border-radius: 8px;
+            padding: 0.8rem 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
             font-size: 1rem;
-            background: rgba(255, 255, 255, 0.9);
-            min-width: 120px;
+            background: #f8fafc;
+            color: #1e293b;
+            min-width: 140px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            appearance: none;
+            font-weight: 500;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+        }
+
+        .filter-select option {
+            background: #ffffff;
+            color: #1e293b;
         }
 
         .clear-filters {
             padding: 0.8rem 1.5rem;
-            background: #ff6b6b;
-            color: white;
-            border: none;
-            border-radius: 8px;
+            background: #fef2f2;
+            color: #ef4444;
+            border: 1px solid #fecaca;
+            border-radius: 10px;
             cursor: pointer;
             font-size: 1rem;
+            font-weight: 600;
             transition: all 0.3s ease;
-            align-self: flex-end;
         }
 
         .clear-filters:hover {
-            background: #ff5252;
+            background: #fee2e2;
             transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(239, 68, 68, 0.1);
         }
 
         .materials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 2.5rem;
+            margin-top: 3rem;
+            perspective: 1500px;
         }
 
         .material-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 1.5rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            animation: cardAppear 0.5s ease-out;
+            border: 1px solid #e2e8f0;
+            animation: cardAppear 0.6s ease-out forwards;
+            position: relative;
         }
 
         @keyframes cardAppear {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(40px) rotateX(-5deg);
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) rotateX(0);
             }
         }
 
         .material-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: #cbd5e1;
         }
 
         .card-header {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
         }
 
         .card-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 15px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
-            color: white;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
         }
 
         .card-title {
@@ -176,51 +217,59 @@
         }
 
         .card-title h3 {
-            font-size: 1.3rem;
-            color: #333;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0f172a;
             margin-bottom: 0.3rem;
+            line-height: 1.3;
         }
 
         .card-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
+            gap: 0.6rem;
+            margin-bottom: 1.2rem;
         }
 
         .tag {
             padding: 0.4rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: white;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         .tag-konu {
-            background: #4CAF50;
+            background: #d1fae5;
+            color: #047857;
         }
 
         .tag-tema {
-            background: #2196F3;
+            background: #dbeafe;
+            color: #1d4ed8;
         }
 
         .tag-seviye {
-            background: #FF9800;
+            background: #fef3c7;
+            color: #b45309;
         }
 
         .tag-yas {
-            background: #9C27B0;
+            background: #ede9fe;
+            color: #6d28d9;
         }
 
         .card-description {
-            color: #666;
+            color: #475569;
             line-height: 1.6;
-            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
         }
 
         .card-actions {
             display: flex;
-            gap: 0.8rem;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
@@ -230,8 +279,8 @@
             padding: 0.8rem;
             border: none;
             border-radius: 10px;
-            font-size: 0.95rem;
-            font-weight: 600;
+            font-size: 0.9rem;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
@@ -243,55 +292,68 @@
         }
 
         .download-btn {
-            background: linear-gradient(135deg, #4CAF50, #45a049);
+            background: #10b981;
             color: white;
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
         }
 
         .download-btn:hover {
-            background: linear-gradient(135deg, #45a049, #4CAF50);
-            transform: translateY(-2px);
+            background: #059669;
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(16, 185, 129, 0.3);
         }
 
         .preview-btn {
-            background: linear-gradient(135deg, #2196F3, #1976D2);
+            background: #3b82f6;
             color: white;
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2);
         }
 
         .preview-btn:hover {
-            background: linear-gradient(135deg, #1976D2, #2196F3);
-            transform: translateY(-2px);
+            background: #2563eb;
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(59, 130, 246, 0.3);
         }
 
         .pdf-btn {
-            background: linear-gradient(135deg, #f44336, #d32f2f);
+            background: #ef4444;
             color: white;
+            box-shadow: 0 4px 10px rgba(239, 68, 68, 0.2);
         }
 
         .pdf-btn:hover {
-            background: linear-gradient(135deg, #d32f2f, #f44336);
-            transform: translateY(-2px);
+            background: #dc2626;
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(239, 68, 68, 0.3);
         }
 
         .no-results {
             text-align: center;
-            padding: 3rem;
-            color: white;
-            font-size: 1.2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
+            padding: 4rem;
+            color: #1e293b;
+            background: #ffffff;
+            border-radius: 24px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .no-results h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
         }
 
         .results-count {
-            color: white;
+            color: #64748b;
             font-size: 1.1rem;
             margin-bottom: 1rem;
             text-align: center;
+            font-weight: 500;
         }
 
         @media (max-width: 768px) {
             .header h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             .materials-grid {
@@ -409,9 +471,9 @@
         const materials = [
             {
                 id: 1,
-                name: "Hep Bir Aradayız - Kalıp İfadeler - Eşleştir",
+                name: "🤝 Hep Bir Aradayız - Kalıp İfadeler - Eşleştir",
                 description: "Öğrenciler, günlük yaşamda kullanılan temel kalıp ifadelerin hangi durumda söylendiğini ayırt eder ve uygun resimlerle eşleştirir.",
-                icon: "👪",
+                icon: "materyal.png",
                 konu: "Okuma",
                 tema: "BİRLİKTE YAŞAM",
                 seviye: "Yazar",
@@ -482,25 +544,25 @@
             resultsCount.style.display = 'block';
 
             const staticCard = `
-                <div class="material-card" style="border: 2px solid rgba(102, 126, 234, 0.4); background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(240,242,255,0.95));">
+                <div class="material-card" style="border: 2px solid #bfdbfe; background: #f8fafc;">
                     <div class="card-header">
-                        <div class="card-icon" style="background: #fff; overflow: hidden; padding: 0;">
+                        <div class="card-icon" style="background: #ffffff; border: 1px solid #e2e8f0; overflow: hidden; padding: 0;">
                             <img src="icons/haftalik-etkinlikler-logo.png" alt="Haftalık Etkinlikler Logo"
                                  style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                         <div class="card-title">
-                            <h3 style="color: #444;">Haftalık Etkinlik Planları</h3>
-                            <span style="font-size: 0.8rem; color: #888; font-weight: 500;">📌 Sabit İçerik</span>
+                            <h3>Haftalık Etkinlik Planları</h3>
+                            <span style="font-size: 0.85rem; color: #64748b; font-weight: 600;">📌 Sabit İçerik</span>
                         </div>
                     </div>
                     <div class="card-description">
                         Türkçe ve Türk Kültürü dersine yönelik haftalık etkinlik planlarını bu bağlantıdan inceleyebilirsiniz. Planlar düzenli olarak güncellenmektedir.
                     </div>
-                    <div style="display: flex; align-items: center; gap: 0.6rem; margin-top: 0.5rem; padding: 0.7rem 1rem; background: rgba(102,126,234,0.08); border-radius: 10px;">
+                    <div style="display: flex; align-items: center; gap: 0.6rem; margin-top: 0.5rem; padding: 0.9rem 1.2rem; background: #eff6ff; border-radius: 12px; transform: translateZ(10px);">
                         <span style="font-size: 1.3rem;">🔗</span>
                         <a href="https://ulkemyanimda.github.io/ogretmensandigi/HaftalikEtkinlikler/index.html"
                            target="_blank"
-                           style="color: #667eea; font-weight: 600; font-size: 0.95rem; text-decoration: none;">
+                           style="color: #2563eb; font-weight: 700; font-size: 1rem; text-decoration: none;">
                             Haftalık Etkinliklere Git →
                         </a>
                     </div>
@@ -510,7 +572,9 @@
             grid.innerHTML = staticCard + materialsToRender.map(material => `
                 <div class="material-card">
                     <div class="card-header">
-                        <div class="card-icon">${material.icon}</div>
+                        <div class="card-icon">
+                            ${material.icon.includes('.') ? `<img src="icons/${material.icon}" alt="Icon" style="width: 70%; height: 70%; object-fit: contain;">` : material.icon}
+                        </div>
                         <div class="card-title">
                             <h3>${material.name}</h3>
                         </div>
