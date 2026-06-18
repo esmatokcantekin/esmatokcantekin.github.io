@@ -1,225 +1,504 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esma Tokcan Tekin - Öğretmen</title>
+    <title>Esma Tokcan Tekin - Türk Dili ve Edebiyatı Öğretmeni</title>
+    <meta name="description"
+        content="Esma Tokcan Tekin - Türk Dili ve Edebiyatı Öğretmeni, Editör ve Dil Uzmanı. Özgeçmiş, eğitim bilgileri ve yayınlar.">
+    <meta name="keywords"
+        content="Esma Tokcan Tekin, Türk Dili ve Edebiyatı, Öğretmen, Editör, Dil Uzmanı, Ankara, MEB">
+    <meta name="author" content="Esma Tokcan Tekin">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Esma Tokcan Tekin - Türk Dili ve Edebiyatı Öğretmeni">
+    <meta property="og:description" content="Kişisel web sitesi ve özgeçmiş.">
+    <meta property="og:image" content="resmifoto.jpeg">
+    <meta property="og:url" content="https://esmatokcantekin.com/">
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Schema Markup (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Esma Tokcan Tekin",
+      "jobTitle": "Türk Dili ve Edebiyatı Öğretmeni",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Milli Eğitim Bakanlığı"
+      },
+      "url": "",
+      "image": "resmifoto.jpeg",
+      "description": "Yükseköğretim ve Yurt Dışı Eğitim Genel Müdürlüğü'nde görevli Türk Dili ve Edebiyatı öğretmeni."
+    }
+    </script>
+
     <style>
+        :root {
+            --primary-bg: #fdfbf7;
+            /* Kırık beyaz / Krem */
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            /* Koyu Arduvaz */
+            --text-muted: #64748b;
+            --accent-color: #0f172a;
+            /* Gece Mavisi / Çok koyu mavi */
+            --accent-gold: #c5a880;
+            /* Zarif Altın */
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 25px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+            --shadow-lg: 0 20px 40px -5px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            background: var(--primary-bg);
+            -webkit-font-smoothing: antialiased;
         }
 
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-color);
         }
 
-        .profile-section {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 300;
-        }
-
-        .subtitle {
-            font-size: 1.2em;
-            opacity: 0.95;
-            margin-bottom: 15px;
-        }
-
-        .contact-info {
-            margin-top: 20px;
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            background: rgba(255,255,255,0.2);
-            padding: 8px 16px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            font-size: 0.95em;
-        }
-
+        /* Nav & Header */
         nav {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 100;
+            left: 0;
+            width: 100%;
+            background: rgba(253, 251, 247, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+            z-index: 1000;
+            transition: var(--transition);
         }
 
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-            padding: 15px;
-            gap: 10px;
-            max-width: 1000px;
+            gap: 2rem;
+            padding: 1.2rem;
+            max-width: 1100px;
             margin: 0 auto;
+            flex-wrap: wrap;
         }
 
         nav a {
-            color: #667eea;
             text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: all 0.3s;
+            color: var(--text-main);
             font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            padding-bottom: 4px;
+            transition: var(--transition);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-gold);
+            transition: var(--transition);
         }
 
         nav a:hover {
-            background: #667eea;
-            color: white;
+            color: var(--accent-gold);
         }
 
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 20px 60px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(197, 168, 128, 0.15) 0%, transparent 60%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            z-index: 1;
+            animation: fadeInUP 1s ease-out forwards;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-gold);
+            box-shadow: 0 0 30px rgba(197, 168, 128, 0.3);
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(197, 168, 128, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Container & Sections */
         .container {
             max-width: 1000px;
-            margin: 30px auto;
+            margin: -40px auto 40px;
             padding: 0 20px;
+            position: relative;
+            z-index: 10;
         }
 
         section {
-            background: white;
-            margin-bottom: 25px;
-            padding: 35px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            background: var(--card-bg);
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 40px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
         }
 
-        h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 10px;
+        section:hover {
+            box-shadow: var(--shadow-lg);
         }
 
-        .item {
-            margin-bottom: 20px;
-            padding-left: 20px;
-            border-left: 3px solid #e0e0e0;
-            transition: all 0.3s;
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
         }
 
-        .item:hover {
-            border-left-color: #667eea;
-            transform: translateX(5px);
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent-gold);
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* Timeline Items */
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            box-shadow: 0 0 0 4px rgba(197, 168, 128, 0.2);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 24px;
+            bottom: -30px;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
         }
 
         .item-title {
-            font-size: 1.1em;
-            color: #333;
+            font-size: 1.25rem;
             font-weight: 600;
-            margin-bottom: 5px;
+            color: var(--accent-color);
+            margin-bottom: 4px;
         }
 
         .item-subtitle {
-            color: #666;
-            margin-bottom: 5px;
+            font-size: 1rem;
+            color: var(--text-main);
+            font-weight: 500;
+            margin-bottom: 4px;
         }
 
         .item-date {
-            color: #999;
-            font-size: 0.9em;
-            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: inline-block;
+            background: #f1f5f9;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-top: 5px;
         }
 
+        /* Lists */
         .pub-list {
             list-style: none;
-            padding: 0;
         }
 
         .pub-list li {
-            padding: 15px;
-            margin-bottom: 10px;
-            background: #f8f9fa;
-            border-radius: 5px;
-            border-left: 4px solid #667eea;
-            transition: all 0.3s;
+            position: relative;
+            padding: 15px 20px 15px 40px;
+            margin-bottom: 12px;
+            background: var(--primary-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .pub-list li::before {
+            content: '📚';
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            font-size: 1.1rem;
         }
 
         .pub-list li:hover {
-            background: #e9ecef;
             transform: translateX(5px);
+            border-color: var(--accent-gold);
+            box-shadow: var(--shadow-sm);
         }
 
+        .pub-list strong {
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        /* Awards Grid */
         .awards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
+            gap: 20px;
         }
 
         .award-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
+            background: var(--primary-bg);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 12px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .award-card::before {
+            content: '🏆';
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .award-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+            box-shadow: var(--shadow-md);
         }
 
         .award-type {
             font-weight: 600;
-            margin-bottom: 5px;
+            color: var(--accent-color);
+            font-size: 1.1rem;
         }
 
         .award-date {
-            font-size: 0.9em;
-            opacity: 0.9;
+            font-size: 0.9rem;
+            color: var(--text-muted);
         }
 
+        /* Footer */
         footer {
-            background: #333;
-            color: white;
+            background: var(--accent-color);
+            color: #94a3b8;
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            padding: 30px;
+            margin-top: 60px;
+            font-size: 0.95rem;
         }
 
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUP {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8em;
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
             }
 
             section {
-                padding: 25px;
+                padding: 30px 20px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
             }
 
             nav ul {
-                padding: 10px;
+                gap: 1rem;
+                padding: 1rem;
             }
 
             nav a {
-                padding: 8px 15px;
-                font-size: 0.9em;
+                font-size: 0.85rem;
+            }
+
+            .container {
+                margin-top: -20px;
             }
         }
     </style>
 </head>
+
 <body>
-    <header>
-        <div class="profile-section">
+    <nav>
+        <ul>
+            <li><a href="#hakkimda">Hakkımda</a></li>
+            <li><a href="#egitim">Eğitim</a></li>
+            <li><a href="#deneyim">Deneyim</a></li>
+            <li><a href="#yayinlar">Yayınlar</a></li>
+            <li><a href="#hizmetici">Eğitimler</a></li>
+            <li><a href="#oduller">Ödüller</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <img src="resmifoto.jpeg" alt="Esma Tokcan Tekin" class="profile-img">
             <h1>Esma TOKCAN TEKİN</h1>
-            <p class="subtitle">Türk Dili ve Edebiyatı Öğretmeni</p>
+            <p class="hero-subtitle">Türk Dili ve Edebiyatı Öğretmeni & Editör</p>
             <div class="contact-info">
                 <span class="contact-item">📧 esma.tokcantekin@meb.gov.tr</span>
                 <span class="contact-item">📍 Ankara</span>
@@ -227,31 +506,22 @@
         </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#hakkimda">Hakkımda</a></li>
-            <li><a href="#egitim">Eğitim</a></li>
-            <li><a href="#deneyim">Deneyim</a></li>
-            <li><a href="#yayinlar">Yayınlar</a></li>
-            <li><a href="#hizmetici">Hizmetiçi Eğitimler</a></li>
-            <li><a href="#oduller">Ödüller</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
+    <main class="container">
         <section id="hakkimda">
-            <h2>Hakkımda</h2>
-            <p>Yükseköğretim ve Yurt Dışı Eğitim Genel Müdürlüğü'nde görevli Türk Dili ve Edebiyatı Öğretmeniyim. 2007 yılından bu yana eğitim alanında aktif olarak çalışmaktayım. Dokuz Eylül Üniversitesi'nde lisans ve yüksek lisans eğitimimi tamamladım. Eğitim ve öğretim sürecinde öğrencilerimize kaliteli ve çağdaş bir eğitim sunmak için sürekli kendimi geliştirmeye özen gösteriyorum.</p>
+            <h2 class="section-title">Hakkımda</h2>
+            <p class="about-text">Yükseköğretim ve Yurt Dışı Eğitim Genel Müdürlüğü'nde görevli Türk Dili ve Edebiyatı
+                öğretmeniyim. 2007 yılından bu yana eğitim alanında aktif olarak çalışmaktayım. Dokuz Eylül
+                Üniversitesi'nde lisans ve yüksek lisans eğitimimi tamamladım.</p>
         </section>
 
         <section id="egitim">
-            <h2>Eğitim Bilgileri</h2>
-            <div class="item">
+            <h2 class="section-title">Eğitim Bilgileri</h2>
+            <div class="timeline-item">
                 <div class="item-title">Yüksek Lisans (Tezsiz)</div>
                 <div class="item-subtitle">Dokuz Eylül Üniversitesi - Ortaöğretim Sosyal Alanlar Eğitimi</div>
                 <div class="item-date">Mezuniyet: 2007</div>
             </div>
-            <div class="item">
+            <div class="timeline-item">
                 <div class="item-title">Lisans</div>
                 <div class="item-subtitle">Dokuz Eylül Üniversitesi - Türk Dili ve Edebiyatı Eğitimi/Öğretmenliği</div>
                 <div class="item-date">Mezuniyet: 2006</div>
@@ -259,71 +529,78 @@
         </section>
 
         <section id="deneyim">
-            <h2>İş Deneyimi</h2>
-            <div class="item">
+            <h2 class="section-title">İş Deneyimi</h2>
+            <div class="timeline-item">
                 <div class="item-title">Öğretmen (Görevlendirme)</div>
                 <div class="item-subtitle">Yükseköğretim ve Yurt Dışı Eğitim Genel Müdürlüğü</div>
                 <div class="item-date">Şubat 2025 - Devam Ediyor</div>
             </div>
-            <div class="item">
+            <div class="timeline-item">
                 <div class="item-title">Öğretmen (Görevlendirme)</div>
                 <div class="item-subtitle">Temel Eğitim Genel Müdürlüğü</div>
                 <div class="item-date">Nisan 2024 - Ocak 2025</div>
             </div>
-            <div class="item">
+            <div class="timeline-item">
                 <div class="item-title">Öğretmen</div>
                 <div class="item-subtitle">Yenikent Şehit Yasin Bahadır Yüce Anadolu İmam Hatip Lisesi - Ankara</div>
                 <div class="item-date">Şubat 2019 - Devam Ediyor (6 yıl 11 ay)</div>
             </div>
-            <div class="item">
+            <div class="timeline-item">
                 <div class="item-title">Öğretmen</div>
                 <div class="item-subtitle">Metin Çiviler Anadolu Lisesi - Antalya/Kepez</div>
                 <div class="item-date">Ocak 2016 - Kasım 2018 (2 yıl 4 ay)</div>
             </div>
-            <div class="item">
+            <div class="timeline-item">
                 <div class="item-title">Çeşitli Eğitim Kurumlarında Öğretmenlik</div>
-                <div class="item-subtitle">Antalya, Bursa ve Burdur</div>
+                <div class="item-subtitle">Burdur, Bursa, Antalya ve Ankara</div>
                 <div class="item-date">2007 - 2016</div>
             </div>
         </section>
 
         <section id="yayinlar">
-            <h2>Yayınlar</h2>
+            <h2 class="section-title">Yayınlar</h2>
             <ul class="pub-list">
-                <li><strong>Yazar & Editör:</strong> Türkçe ve Türk Kültürü Kitapları 5-6-7-8. Seviye</li>
-                <li><strong>Dil Uzmanı:</strong> Temel Eğitim Genel Müdürlüğü Erken Çocukluk Daire Başkanlığı - Okul Öncesi Çocuk Şarkıları 1</li>
-                <li><strong>Dil Uzmanı:</strong> Temel Eğitim Genel Müdürlüğü Erken Çocukluk Daire Başkanlığı - Okul Öncesi Çocuk Şarkıları 2</li>
-                <li><strong>Dil Uzmanı:</strong> Temel Eğitim Genel Müdürlüğü Erken Çocukluk Daire Başkanlığı - Okul Öncesi Çocuklar İçin Tekerlemeler</li>
+                <li><strong>Editör:</strong> Türkçe ve Türk Kültürü Kitapları 5. Seviye</li>
+                <li><strong>Editör:</strong> Türkçe ve Türk Kültürü Kitapları 6. Seviye</li>
+                <li><strong>Yazar:</strong> Türkçe ve Türk Kültürü Kitapları 7. Seviye</li>
+                <li><strong>Yazar:</strong> Türkçe ve Türk Kültürü Kitapları 8. Seviye</li>
+                <li><strong>Dil Uzmanı:</strong> Temel Eğitim Genel Müdürlüğü Erken Çocukluk Daire Başkanlığı - Okul
+                    Öncesi Çocuk Şarkıları 1</li>
+                <li><strong>Dil Uzmanı:</strong> Temel Eğitim Genel Müdürlüğü Erken Çocukluk Daire Başkanlığı - Okul
+                    Öncesi Çocuk Şarkıları 2</li>
+                <li><strong>Dil Uzmanı:</strong> Temel Eğitim Genel Müdürlüğü Erken Çocukluk Daire Başkanlığı - Okul
+                    Öncesi Çocuklar İçin Tekerlemeler</li>
             </ul>
         </section>
 
         <section id="hizmetici">
-            <h2>Hizmetiçi Eğitim Faaliyetleri</h2>
-            <div class="item">
+            <h2 class="section-title">Hizmetiçi Eğitim Faaliyetleri</h2>
+            <div class="timeline-item">
                 <div class="item-subtitle">Uzman Öğretmenlik Eğitim Programı Semineri</div>
                 <div class="item-date">Temmuz - Eylül 2022</div>
             </div>
-            <div class="item">
+            <div class="timeline-item">
                 <div class="item-subtitle">Müze Eğitimi Kursu</div>
                 <div class="item-date">Ağustos 2020</div>
             </div>
-            <div class="item">
+            <div class="timeline-item">
                 <div class="item-subtitle">Dijital Girişimciliğin Temelleri Kursu</div>
                 <div class="item-date">Temmuz 2020</div>
             </div>
-            <div class="item">
+            <div class="timeline-item">
                 <div class="item-subtitle">FATİH Projesi - Eğitimde Teknoloji Kullanım Kursu</div>
                 <div class="item-date">Ekim 2012</div>
             </div>
-            <div class="item">
+            <div class="timeline-item">
                 <div class="item-subtitle">İş Sağlığı ve Güvenliği Eğitimleri</div>
                 <div class="item-date">2019, 2022, 2025</div>
             </div>
-            <p style="margin-top: 15px; color: #666; font-size: 0.95em;">Ve daha birçok seminer ve kurs programına katılım...</p>
+            <p style="margin-top: 20px; color: var(--text-muted); font-size: 0.95em; font-style: italic;">Ve daha birçok
+                seminer ve kurs programına katılım...</p>
         </section>
 
         <section id="oduller">
-            <h2>Aldığı Ödüller</h2>
+            <h2 class="section-title">Aldığı Ödüller</h2>
             <div class="awards-grid">
                 <div class="award-card">
                     <div class="award-type">Üstün Başarı Belgesi</div>
@@ -343,10 +620,12 @@
                 </div>
             </div>
         </section>
-    </div>
+    </main>
 
     <footer>
         <p>&copy; 2026 Esma Tokcan Tekin. Tüm hakları saklıdır.</p>
+        <p style="font-size: 0.85em; opacity: 0.7; margin-top: 5px;">Türk Dili ve Edebiyatı Öğretmeni</p>
     </footer>
 </body>
+
 </html>
